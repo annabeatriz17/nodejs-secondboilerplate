@@ -19,7 +19,6 @@ usuariosRoutes.get("/", (req, res) => {
 
 usuariosRoutes.post("/", (req, res) => {
   const { name, email, password } = req.body;
-
   const user = userslist.addUser(name, email, password);
 
   return res.status(201).json({
@@ -28,4 +27,29 @@ usuariosRoutes.post("/", (req, res) => {
   });
 }); 
 
+usuariosRoutes.get("/:id", (req, res) => {
+  const { id } = req.params;
+
+  const user = userslist.getUserById(id);
+  
+  if(!user){
+    return res.status(404).json({
+      message: `Usuário com o id ${id} não encontrado!`,
+    });
+  }
+
+
+  return res.status(200).json({
+    message: `Usuário com o id ${id} encontrado!`,
+    user,
+  });
+});
+
+usuariosRoutes.put("/:id", (req, res) => {
+  
+});
+
+usuariosRoutes.delete("/:id", (req, res) => {
+  
+});
 export default usuariosRoutes;
