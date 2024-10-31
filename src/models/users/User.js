@@ -1,6 +1,6 @@
 class User {
     constructor( nome, email, password) {
-        this.id = this.id;
+        this.id = this.generaId();
         this.nome;
         this.email;
         this.password;
