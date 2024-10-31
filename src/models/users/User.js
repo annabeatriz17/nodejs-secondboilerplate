@@ -1,5 +1,3 @@
-const e = require("express");
-
 class User {
     constructor( nome, email, password) {
         this.id = this.id;

@@ -1,9 +1,11 @@
 class UsersRepositorios {
     constructor() {
-        this.users[];
+        this.users = [];
     }
 
     getAllUsers(){
         return this.users;
     }
 }
+
+export default UsersRepositorios;
